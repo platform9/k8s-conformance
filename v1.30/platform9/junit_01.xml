@@ -1,0 +1,105 @@
+Last login: Mon Dec 30 15:17:28 on ttys006
+ajayashokbedre@FVFMX2YM1WFV .ssh % ls
+authorized_keys		authorized_keys.jcorig	id_rsa			id_rsa.pub		known_hosts		known_hosts.old		private_ajay
+ajayashokbedre@FVFMX2YM1WFV .ssh % cd
+ajayashokbedre@FVFMX2YM1WFV ~ % ls
+Applications	Desktop		Documents	Downloads	Library		Movies		Music		Pictures	Public
+ajayashokbedre@FVFMX2YM1WFV ~ % ssh root@10.149.106.240                         
+root@10.149.106.240's password: 
+Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.4.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Dec 30 10:01:08 UTC 2024
+
+  System load:  0.36               Processes:              177
+  Usage of /:   10.9% of 57.98GB   Users logged in:        0
+  Memory usage: 27%                IPv4 address for ens3:  10.149.106.240
+  Swap usage:   0%                 IPv4 address for tunl0: 10.20.21.128
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+390 updates can be installed immediately.
+290 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+New release '22.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon Dec 30 07:17:35 2024 from 10.149.101.5
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~# ls
+LICENSE  kc  pf9  snap  sonobuoy  sonobuoy_0.57.2_linux_amd64.tar.gz
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~# cd sonobuoy/
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy# ls
+202412300632_sonobuoy_93a695ee-7790-45f1-9bfa-cfef2d2ff9bf.tar.gz  LICENSE  hosts  meta  plugins  podlogs  resources  servergroups.json  serverversion.json  sonobuoy  test_res
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy# hostanme -a
+
+Command 'hostanme' not found, did you mean:
+
+  command 'hostname' from deb hostname (3.23)
+
+Try: apt install <deb name>
+
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy# hostanme -I
+
+Command 'hostanme' not found, did you mean:
+
+  command 'hostname' from deb hostname (3.23)
+
+Try: apt install <deb name>
+
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy# hostname -I
+10.149.106.240 10.20.21.128 
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy# ls
+202412300632_sonobuoy_93a695ee-7790-45f1-9bfa-cfef2d2ff9bf.tar.gz  LICENSE  hosts  meta  plugins  podlogs  resources  servergroups.json  serverversion.json  sonobuoy  test_res
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy# cd plugins/
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins# ls
+e2e  systemd-logs
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins# cd e2e/
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins/e2e# ls
+definition.json  results  sonobuoy_results.yaml
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins/e2e# cd results/
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins/e2e/results# ls
+global
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins/e2e/results# cd global/
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins/e2e/results/global# ls
+e2e.log  junit_01.xml
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins/e2e/results/global# vim e2e.log 
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins/e2e/results/global# ls
+e2e.log  junit_01.xml
+root@test-pf9-qbert-bare-os-u20-3503092-750-2:~/sonobuoy/plugins/e2e/results/global# vim junit_01.xml 
+
+<?xml version="1.0" encoding="UTF-8"?>
+  <testsuites tests="4" disabled="0" errors="0" failures="1" time="1800.031744902">
+      <testsuite name="Kubernetes e2e suite" package="/usr/local/bin" tests="4" disabled="0" skipped="0" errors="0" failures="1" time="1800.031744902" timestamp="2024-12-30T06:32:33">
+          <properties>
+              <property name="SuiteSucceeded" value="false"></property>
+              <property name="SuiteHasProgrammaticFocus" value="false"></property>
+              <property name="SpecialSuiteFailureReason" value=""></property>
+              <property name="SuiteLabels" value="[]"></property>
+              <property name="RandomSeed" value="1735540352"></property>
+              <property name="RandomizeAllSpecs" value="true"></property>
+              <property name="LabelFilter" value=""></property>
+              <property name="FocusStrings" value="\[Conformance\]"></property>
+              <property name="SkipStrings" value=""></property>
+              <property name="FocusFiles" value=""></property>
+              <property name="SkipFiles" value=""></property>
+              <property name="FailOnPending" value="false"></property>
+              <property name="FailFast" value="false"></property>
+              <property name="FlakeAttempts" value="0"></property>
+              <property name="DryRun" value="false"></property>
+              <property name="ParallelTotal" value="1"></property>
+              <property name="OutputInterceptorMode" value=""></property>
+          </properties>
+          <testcase name="[ReportBeforeSuite]" classname="Kubernetes e2e suite" status="passed" time="0.000140848"></testcase>
+          <testcase name="[SynchronizedBeforeSuite]" classname="Kubernetes e2e suite" status="failed" time="1800.029914241">
+              <failure message="" type="failed">[FAILED] timed out waiting for the condition&#xA;In [SynchronizedBeforeSuite] at: k8s.io/kubernetes/test/e2e/e2e.go:211 @ 12/30/24 07:02:33.494&#xA;</failure>
+              <system-err>&gt; Enter [SynchronizedBeforeSuite] TOP-LEVEL - k8s.io/kubernetes/test/e2e/e2e.go:69 @ 12/30/24 06:32:33.464&#xA;I1230 06:32:33.464747 17 util.go:506] &gt;&gt;&gt; kubeConfig: /tmp/kubeconfig-1876277002&#xA;I1230 06:32:33.466681 17 helper.go:48] Waiting up to 30m0s for all (but 0) nodes to be schedulable&#xA;I1230 06:32:33.483484 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:32:33.483566 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:32:33.483576 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:33:03.488635 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:33:03.488838 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:33:03.488851 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:33:33.488860 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:33:33.488924 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:33:33.488938 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:34:03.489088 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:34:03.489232 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:34:03.489243 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:34:33.493185 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:34:33.493311 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:34:33.493321 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:35:03.491048 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:35:03.491167 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:35:03.491176 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:35:33.498965 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:35:33.499126 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:35:33.499150 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:36:03.490051 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:36:03.490126 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:36:03.490139 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:36:33.490690 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:36:33.490950 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:36:33.490974 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:37:03.488973 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:37:03.489056 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:37:03.489072 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:37:33.489269 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:37:33.489497 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:37:33.489509 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:38:03.489671 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:38:03.489858 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:38:03.489879 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:38:33.488359 17 wait.go:256] Unschedulable nodes= 1, maximum value for starting tests= 0&#xA;I1230 06:38:33.488434 17 wait.go:258] &#x9;-&gt; Node 10.149.107.50 [[[ Ready=true, Network(available)=true, Taints=[{node-role.kubernetes.io/master true NoSchedule &lt;nil&gt;}], NonblockingTaints=node-role.kubernetes.io/control-plane ]]]&#xA;I1230 06:38:33.488442 17 wait.go:270] ==== node wait: 4 out of 5 nodes are ready, max notReady allowed 0.  Need 1 more before starting.&#xA;I1230 06:39:03.489231 17 wait.go:256] Unschedulable nodes= 1, maximum value f@@@                                                                                                                                                                                                         
+                                                                                                                                                                                          1,1           Top
+
